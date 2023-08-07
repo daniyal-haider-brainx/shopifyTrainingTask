@@ -19,16 +19,29 @@
         content: '';
         display: block;
       }
+
+
     }
   {%- endstyle -%}
 {%- endif -%}
+{%- if section.settings['margin-left'] != blank -%}
+  {%- style -%}
+        @media screen and (min-width: 750px){
+    #Banner-{{ section.id }} .banner__content
+          {margin-left:0;
+          }
 
+        }
+  {%- endstyle -%}
+{%- endif -%}
 {%- style -%}
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+       .banner__heading.black-color {
+      color: black !important;
+    }
 {%- endstyle -%}
-
 {%- liquid
   assign full_width = '100vw'
   assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
@@ -112,20 +125,20 @@
     </div>
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
+    <div class=" custom banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
-              {{ block.shopify_attributes }}
+              class="banner__heading text__banner inline-richtext {{ block.settings.heading_size }}  {% if block.settings.color_change %}black-color{% endif %}"
             >
               {{ block.settings.heading }}
             </h2>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
+              <p class="second_banner ">{{ block.settings.text }}</p>
             </div>
+
           {%- when 'buttons' -%}
             <div
               class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
@@ -156,6 +169,9 @@
                 </a>
               {%- endif -%}
             </div>
+            {% if section.settings['text-show'] != blank %}
+              <p class="banner-para">{{ section.settings['text-show'] }}</p>
+            {% endif %}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -180,6 +196,17 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
+    },
+        {
+      "type": "checkbox",
+      "id": "margin-left",
+      "label": "Remove left margin",
+         "default":false
+    },    {
+      "type": "text",
+      "id": "text-show",
+      "label": "write text",
+          "default":"default"
     },
     {
       "type": "range",
@@ -361,14 +388,20 @@
     {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",
-      "limit": 1,
+      "limit": 3,
       "settings": [
         {
           "type": "inline_richtext",
           "id": "heading",
           "default": "Image banner",
           "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
-        },
+        },  {
+          "type":"checkbox",
+    "id":"color_change",
+    "default":false,
+    "label":"Click to Change color"
+    }
+,
         {
           "type": "select",
           "id": "heading_size",

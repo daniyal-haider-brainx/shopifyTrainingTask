@@ -492,7 +492,8 @@
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
-  @media screen and (max-width: 749px) {
+  @media screen and (max-width: 749px) 
+  
     .footer .grid {
       margin-left: 0;
     }

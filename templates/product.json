@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -42,23 +35,15 @@
           "type": "description",
           "settings": {
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -78,7 +63,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Related Product",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -92,10 +77,62 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "9f99d804-3539-4f76-984b-3eb40af8e302": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Discription",
+            "icon": "none",
+            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
+            "page": ""
+          }
+        },
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Additional-information",
+            "icon": "none",
+            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
+            "page": ""
+          }
+        },
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Reviews",
+            "icon": "none",
+            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-1",
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-2",
+        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "9f99d804-3539-4f76-984b-3eb40af8e302"
   ]
 }
