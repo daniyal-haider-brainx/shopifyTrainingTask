@@ -128,10 +128,22 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "pina-instagram": {
+        "type": "pina-instagram",
+        "settings": {
+          "title": "Follow Us On Instagram",
+          "show_profile": true,
+          "small": "2",
+          "medium": "3",
+          "large": "3",
+          "gutter": "2",
+          "count": "8"
+        }
       }
     },
     "content_for_index": [
-
+      "pina-instagram"
     ],
     "color_schemes": {
       "background-1": {

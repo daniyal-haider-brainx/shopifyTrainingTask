@@ -4,6 +4,24 @@
   "sections": {
     "header": {
       "type": "header",
+      "blocks": {
+        "76d537e8-2d28-46b1-a3d5-85e2e317301c": {
+          "type": "text",
+          "settings": {
+            "header__buttons": "Sign Up"
+          }
+        },
+        "373479bd-80e9-448a-b004-bf9d81dd01ca": {
+          "type": "text",
+          "settings": {
+            "header__buttons": "Login"
+          }
+        }
+      },
+      "block_order": [
+        "76d537e8-2d28-46b1-a3d5-85e2e317301c",
+        "373479bd-80e9-448a-b004-bf9d81dd01ca"
+      ],
       "custom_css": [
         ".header__heading {display: none;}"
       ],

@@ -120,9 +120,16 @@
             "heading_size": "h1"
           }
         },
-        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-price-1": {
-          "type": "price",
+        "eb7ae2d3-c8e0-4641-af49-02fdbb2ae089": {
+          "type": "icon-with-text",
           "settings": {
+            "layout": "vertical",
+            "icon_1": "silhouette",
+            "heading_1": "<strong>Ice Energy<\/strong>",
+            "icon_2": "price_tag",
+            "heading_2": "<strong>500 $<\/strong>",
+            "icon_3": "none",
+            "heading_3": ""
           }
         },
         "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-quantity_selector-1": {
@@ -140,7 +147,7 @@
       },
       "block_order": [
         "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-title-1",
-        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-price-1",
+        "eb7ae2d3-c8e0-4641-af49-02fdbb2ae089",
         "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-quantity_selector-1",
         "2980fe29-4d9c-4b0f-b3af-bed11486ae73"
       ],
@@ -209,6 +216,28 @@
         "padding_bottom": 36
       }
     },
+    "pina-instagram": {
+      "type": "pina-instagram",
+      "settings": {
+        "title": "Follow Us On Instagram",
+        "show_profile": false,
+        "timeline": "own",
+        "small": "2",
+        "medium": "3",
+        "large": "4",
+        "gutter": "2",
+        "count": "3",
+        "hashtags": "",
+        "container_class": "page-width",
+        "margin_top": "",
+        "margin_left": "",
+        "margin_bottom": "",
+        "margin_right": "",
+        "desktop_width": "",
+        "mobile_width": "",
+        "tablet_width": ""
+      }
+    },
     "3ebae081-edcf-4280-877f-a1dbbb1d8467": {
       "type": "image-banner",
       "blocks": {
@@ -250,50 +279,6 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
-    },
-    "046198f4-2929-4e0e-ba94-ca2c9e656077": {
-      "type": "multicolumn",
-      "blocks": {
-        "e64d62ab-11b8-4e6f-b052-a9fc58d79368": {
-          "type": "image",
-          "settings": {
-            "multicolumnImage": "shopify:\/\/shop_images\/s34.jpg"
-          }
-        },
-        "5665a7e0-36cd-42cd-8e1c-21d4fc705aa2": {
-          "type": "image",
-          "settings": {
-            "multicolumnImage": "shopify:\/\/shop_images\/s.jpg"
-          }
-        },
-        "49f47128-e62a-4cf0-b75f-8adfb75f5b04": {
-          "type": "image",
-          "settings": {
-            "multicolumnImage": "shopify:\/\/shop_images\/s2.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "e64d62ab-11b8-4e6f-b052-a9fc58d79368",
-        "5665a7e0-36cd-42cd-8e1c-21d4fc705aa2",
-        "49f47128-e62a-4cf0-b75f-8adfb75f5b04"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -301,7 +286,7 @@
     "6609c091-3759-4962-bb29-422a906ac105",
     "3d921e78-6b42-45b8-831a-8ff4f15e7dc1",
     "d2945ebc-8eb1-486f-8a9b-fbbf1734ec7c",
-    "3ebae081-edcf-4280-877f-a1dbbb1d8467",
-    "046198f4-2929-4e0e-ba94-ca2c9e656077"
+    "pina-instagram",
+    "3ebae081-edcf-4280-877f-a1dbbb1d8467"
   ]
 }

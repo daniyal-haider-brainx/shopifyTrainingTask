@@ -87,7 +87,7 @@
 {
   color:#0aa1bc;
   font-weight:bold;
-  font-size:20px;
+  font-size: 25px;
   
 }
 .productForm__Details
@@ -134,7 +134,7 @@ min-height: calc(3.5rem + var(--buttons-border-width) * 2) !important;
 
 .itemHeading
 {
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 }
 .itemAmount
