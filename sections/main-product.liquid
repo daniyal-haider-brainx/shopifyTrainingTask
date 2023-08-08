@@ -13,35 +13,7 @@
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
-<script defer>
-  document.addEventListener("DOMContentLoaded", function() {
-  function showTabContent(tabId) {
-            // Hide all tab contents first
-            const tabContents = document.getElementsByClassName('tab-content');
-            for (const content of tabContents) {
-                content.style.display = 'none';
-            }
 
-            // Show the selected tab content
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-            }
-        }
-
-        // Attach click event listeners to tab links
-        const tabLinks = document.getElementsByClassName('tab-link');
-        for (const link of tabLinks) {
-            link.addEventListener('click', function () {
-                const tabId = this.getAttribute('data-tab');
-                showTabContent(tabId);
-            });
-        }
-
-        // Show the initial tab content (you can choose a default tab to show on page load)
-        showTabContent('tab1');
-  });
-</script>
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -130,7 +102,7 @@
                 {%- render 'price',
                   product: product,
                   use_variant: true,
-                  show_badges: true,
+                  show_badges: false,
                   price_class: 'price--large'
                 -%}
               </div>
@@ -201,26 +173,7 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
-{%- when 'description' -%}
-  {%- if product.description != blank -%}
-    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-      {% assign description_parts = product.description | split: ' ' %}
-      {% assign part_size = description_parts.size | divided_by: 3 %}
-      {% assign part1 = description_parts | slice: 0, part_size | join: ' ' %}
-      {% assign part2 = description_parts | slice: part_size, part_size | join: ' ' %}
-      {% assign part3 = description_parts | slice: part_size | join: ' ' %}
 
-      <ul class="nav-tabs">
-        <li class="tab-link active" data-tab="tab1">Part 1</li>
-        <li class="tab-link" data-tab="tab2">Part 2</li>
-        <li class="tab-link" data-tab="tab3">Part 3</li>
-      </ul>
-
-      <div id="tab1" class="tab-content active">{{ part1 }}</div>
-      <div id="tab2" class="tab-content">{{ part2 }}</div>
-      <div id="tab3" class="tab-content">{{ part3 }}</div>
-    </div>
-  {%- endif -%}
 
             {%- when 'sku' -%}
               <p
@@ -261,25 +214,6 @@
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
-                  {{ 'products.product.quantity.label' | t }}
-                  <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-                    <span class="loading-overlay hidden">
-                      <span class="loading-overlay__spinner">
-                        <svg
-                          aria-hidden="true"
-                          focusable="false"
-                          class="spinner"
-                          viewBox="0 0 66 66"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                        </svg>
-                      </span>
-                    </span>
-                    <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
-                  </span>
-                </label>
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">

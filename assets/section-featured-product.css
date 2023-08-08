@@ -108,7 +108,8 @@ border-color: #0aa1bc !important;
 color:#0aa1bc ;
 min-height: calc(3.5rem + var(--buttons-border-width) * 2) !important;
   --border-opacity:none !important;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: bold;
 }
 /* .button{
   min-height: calc(3.5rem + var(--buttons-border-width) * 2);
@@ -121,7 +122,7 @@ min-height: calc(3.5rem + var(--buttons-border-width) * 2) !important;
 
 } */
 .product-form__input {
-  flex: 0 0 47%!important;
+  flex: 0 0 30%!important;
 }
 .quantity::after
 {
@@ -154,4 +155,8 @@ color: #0aa1bc;}
 .icon-with-text
 {
   margin: 0px !important;
+}
+.product-form__buttons
+{
+  padding-left: 25px;
 }

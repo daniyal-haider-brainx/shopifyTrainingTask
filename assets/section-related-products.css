@@ -5,3 +5,45 @@
 .related-products__heading {
   margin: 0 0 3rem;
 }
+.grid {
+  column-gap: 125px !important;
+}
+.product-grid 
+{
+  display: flex !important;
+  justify-content: space-between !important;
+
+}
+.card__heading{
+  font-size:26PX;
+  font-weight: bold;
+  text-align: center;
+}
+.card__heading:hover{
+  text-decoration: none;
+}
+.card-information
+{
+  text-align: center;
+}
+.price-item--regular
+{
+  font-size: 9px;
+  
+}
+.price-item--sale
+{
+  font-size: 9px;
+  font-size:bold;
+}
+.related-products__heading
+{
+text-align: center;
+font-weight: bold;
+font-size: 35px;
+margin-bottom: 50px;
+}
+.card__badge
+{
+  display: none;
+}

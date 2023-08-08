@@ -1,54 +1,93 @@
 <script defer>
   document.addEventListener("DOMContentLoaded", function() {
-  function showTabContent(tabId) {
-            // Hide all tab contents first
-            const tabContents = document.getElementsByClassName('tab-content');
-            for (const content of tabContents) {
-                content.style.display = 'none';
-            }
+    function showTabContent(tabId) {
+      // Hide all tab contents first
+      const tabContents = document.getElementsByClassName('tab-content');
+      for (const content of tabContents) {
+        content.style.display = 'none';
+      }
 
-            // Show the selected tab content
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-            }
-        }
+      // Show the selected tab content
+      const selectedTab = document.getElementById(tabId);
+      if (selectedTab) {
+        selectedTab.style.display = 'block';
+      }
+    }
 
-        // Attach click event listeners to tab links
-        const tabLinks = document.getElementsByClassName('tab-link');
-        for (const link of tabLinks) {
-            link.addEventListener('click', function () {
-                const tabId = this.getAttribute('data-tab');
-                showTabContent(tabId);
-            });
-        }
+    // Attach click event listeners to tab links
+    const tabLinks = document.getElementsByClassName('tab-link');
+    for (const link of tabLinks) {
+      link.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+        showTabContent(tabId);
+      });
+    }
 
-        // Show the initial tab content (you can choose a default tab to show on page load)
-        showTabContent('tab1');
+    // Show the initial tab content (you can choose a default tab to show on page load)
+    showTabContent('shopify-section-template--20256485835071__d1e1de60-29b2-4c31-8af9-4c5c990a34f7');
   });
 </script>
 
-{% for collection in collections %}
-  {{- collection.title | link_to: collection.url }}
-{% endfor %}
+{%style%}
+.productImage
+{
+  width: 320px;
+}
+.productImageFreezer
+{
+  height: 248px;
+width: 255px;
+}
+.tab-link {
+  border-radius: 27px;
+  border: solid 0.1px #707070;
+  background-color: #fff;
+  width: 109px;
+  text-align: center;
+  font-size: 14px;
+  color: #5c5c5c;
+  font-weight:bold;
+}
+li.tab-link.active
+{
+  border: solid 0.2px #707070;
+}
+.collection-list-title
+{
+  margin:auto;
+}
+.tab-content
+{
+  display: flex;
+justify-content: center;
+text-align: center;
+margin-top: 68px;
+text-decoration:none;
+cursor:pointer;
+color: #000;
+}
+.nav-tabs
+{
+  display: flex;
+justify-content: center;
+align-items: center;
+column-gap: 105px;
+list-style: none;
+  list-style-position: outside;
+font-size: 20px;
+cursor:pointer;
+}
+{%endstyle%}
+{% comment %} <ul class="nav-tabs">
+  {% for collection in collections %}
+    <li class="tab-link {% if forloop.first %}active{% endif %}" data-tab="tab{{ forloop.index }}">{{ collection.title }}</li>
+  {% endfor %}
+</ul> {% endcomment %}
 
 
-
-
-      <ul class="nav-tabs">
-        <li class="tab-link active" data-tab="tab1">Part 1</li>
-        <li class="tab-link" data-tab="tab2">Part 2</li>
-        <li class="tab-link" data-tab="tab3">Part 3</li>
-      </ul>
-
-      <div id="tab1" class="tab-content active">
-        {% for product in collections.LED.products %}
-  {{- collection.title | link_to: collection.url }}
-  {{- product.title | link_to: product.url }}
-  <img src="{{ product.featured_image | img_url }} ">
-{% endfor %}
-
-      </div>
-      <div id="tab2" class="tab-content">{{ part2 }}</div>
-      <div id="tab3" class="tab-content">{{ part3 }}</div>
-    </div>
+<ul class="nav-tabs">
+  <li class="tab-link active" data-tab="shopify-section-template--20256485835071__d1e1de60-29b2-4c31-8af9-4c5c990a34f7">Tab 1</li>
+  <li class="tab-link" data-tab="shopify-section-template--20256485835071__29b16ae2-8648-4c3f-9c01-518846eb8823">Tab 2</li>
+  <li class="tab-link" data-tab="shopify-section-template--20256485835071__37f333aa-a090-4316-93e1-b450fb97e3d6">Tab 3</li>
+  <li class="tab-link" data-tab="shopify-section-template--20256485835071__dc853da1-d086-4a4e-9ea2-e43ac1a9fb7b">Tab 4</li>
+</ul>

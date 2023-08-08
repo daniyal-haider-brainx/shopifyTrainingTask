@@ -6,67 +6,69 @@
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .grid--3-col-tablet .grid__item {
-    width: 100% !important;
-    max-width: 236px !important;
 
-  }
-  .subscribefield
-  {
-    border-radius: 42px;
-text-align:center;
-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
+    .grid--3-col-tablet .grid__item {
+      width: 100% !important;
+      max-width: 236px !important;
 
-background-color: #fff;
-  }
-  .footer-block__details-content 
-  {
-    font-size:12px;
-  }
-  .footer-block__brand-info .footer__list-social.list-social
-  {
-    opacity:.1 !important;
-  }
+    }
+    .footer-block__details-content .rte
+    {
+      border-radius: 42px;
 
-  .grid
-  {
-    column-gap:0px !important;
-  }
-    .button__footer
-  {
-    display: flex;
-border-radius: 38px;
-background: #0aa1bc;
-color: white;
-padding-left: 25px;
-width: 124px !important;
-font-weight: bold;
-box-shadow: none;
-text-decoration: none;
---border-offset: none !important;
-margin-top: 108px;
-height: 56px;
-padding-top: 14px;
-  }
-    .footer {
-      margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
+
+  background-color: #fff;
+    }
+    .footer-block__details-content
+    {
+      font-size:11px;
+    }
+    .footer-block__brand-info .footer__list-social.list-social
+    {
+      opacity:.1 !important;
     }
 
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    .grid
+    {
+      column-gap:0px !important;
     }
-
-    @media screen and (min-width: 750px) {
+      .button__footer
+    {
+      display: flex;
+      border-radius: 38px;
+      background: #0aa1bc;
+      color: white;
+      padding-left: 25px;
+      width: 124px !important;
+      font-weight: bold;
+      box-shadow: none;
+      text-decoration: none;
+      --border-offset: none !important;
+      margin-top: 108px;
+      height: 42px;
+      padding-top: 5px;
+      text-align: center;
+    }
       .footer {
-        margin-top: {{ section.settings.margin_top }}px;
+        margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
       }
 
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
       }
-    }
+
+      @media screen and (min-width: 750px) {
+        .footer {
+          margin-top: {{ section.settings.margin_top }}px;
+        }
+
+        .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+      }
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
@@ -128,9 +130,8 @@ padding-top: 14px;
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'text' -%}
-                    <div class="footer-block__details-content rte subscribefield">
-                      <p class="{{ block.settings.subtext_class }}">{{ block.settings.subtext }}</p>
-
+                    <div class="footer-block__details-content rte">
+                      {{ block.settings.subtext }}
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
@@ -588,15 +589,12 @@ padding-top: 14px;
   "default": {
     "blocks": [
       {
-        "type": "input",
-        "settings": {
-          "label": "subscribe to email",
-          "id": "subscribe_id"
-        }
+        "type": "link_list"
+      },
+      {
+        "type": "text"
       }
     ]
   }
-  
-  }
-
+}
 {% endschema %}

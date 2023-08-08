@@ -3,6 +3,7 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -72,12 +73,18 @@
         >
           {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
           {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+          {% comment %} <ul class="nav-tabs">
+            {% for collection in collections %}
+              <li class="tab-link {% if forloop.first %}active{% endif %}" data-tab="tab{{ forloop.index }}">{{ collection.title }}</li>
+            {% endfor %}
+          </ul> {% endcomment %}
+          
           {% render 'card-collection',
             card_collection: block.settings.collection,
             media_aspect_ratio: section.settings.image_ratio,
             columns: columns,
             placeholder_image: placeholder_image
-          %}
+          %} 
         </li>
       </ul>
       {%- if show_mobile_slider -%}

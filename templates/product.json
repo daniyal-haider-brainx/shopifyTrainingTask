@@ -27,8 +27,8 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -58,6 +58,48 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "aec810d5-0e26-4dad-a0a3-4896fb2fa30f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-heading-1",
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-text-1",
+        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "related-products": {
@@ -132,6 +174,7 @@
   },
   "order": [
     "main",
+    "aec810d5-0e26-4dad-a0a3-4896fb2fa30f",
     "related-products",
     "9f99d804-3539-4f76-984b-3eb40af8e302"
   ]

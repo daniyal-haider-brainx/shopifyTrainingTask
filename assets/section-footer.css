@@ -324,7 +324,10 @@
   .footer-block__details-content > p,
   .footer-block__details-content > li {
     padding: 0;
+    color: #b1b1b1;
+    font-weight: bold;
   }
+  
 
   .footer-block:only-child li {
     display: inline;
@@ -337,7 +340,8 @@
 
 .footer-block__details-content .list-menu__item--link,
 .copyright__content a {
-  color: rgba(var(--color-foreground), 0.75);
+  color: #b1b1b1;
+  font-weight: bold;
 }
 
 .footer-block__details-content .list-menu__item--active {
@@ -373,6 +377,8 @@
 
   .footer-block__details-content > :first-child .list-menu__item--link {
     padding-top: 0;
+    color: #b1b1b1;
+    font-weight: bold;
   }
 }
 

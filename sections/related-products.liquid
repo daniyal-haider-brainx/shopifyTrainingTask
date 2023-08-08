@@ -45,6 +45,13 @@
             %}
           </li>
         {% endfor %}
+        <div class="loginRegister__buttons">
+          {%- for block in section.blocks -%}
+          <div class="single_button">
+            {{ block.settings.header__buttons }}
+          </div>
+        {%endfor%}
+      </div>
       </ul>
     {% endif %}
   </product-recommendations>
@@ -243,5 +250,6 @@
       "default": 36
     }
   ]
+  
 }
 {% endschema %}

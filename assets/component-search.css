@@ -68,3 +68,27 @@
 input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+.field__input:focus
+{
+  box-shadow:none !important;
+}
+.field__input:hover
+{
+  box-shadow:none !important;
+}
+.field__input:active
+{
+  box-shadow:none !important;
+}
+.search-container .field:hover
+{
+  border-color: red;
+}
+.search__input .field__input-focus-visible
+{
+box-shadow: none;
+}
+.field__input:focus-visible
+{
+  box-shadow: none !important;
+}
