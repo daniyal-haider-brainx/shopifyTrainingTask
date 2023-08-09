@@ -35,6 +35,13 @@
           "type": "description",
           "settings": {
           }
+        },
+        "3920f28a-d51d-4165-a9c9-cea24d1002ec": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>― Product Features<\/strong><\/p><ul><li>Feet long Air Throw<\/li><li>Bigger Outdoor<\/li><li>Biggest Indoor (Available in Market)<\/li><li>Built-in Energy Meter<\/li><li>Electricity Consumption Management<\/li><li>Factory installed Wi-Fi Kit<\/li><li>Full Money Back in  Year<\/li><li>Mirror Finish Dual<\/li><li>Injection indoor<\/li><li>Online Control<\/li><li>Schedule Management<\/li><\/ul>",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
@@ -43,7 +50,8 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description"
+        "description",
+        "3920f28a-d51d-4165-a9c9-cea24d1002ec"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -60,50 +68,38 @@
         "padding_bottom": 12
       }
     },
-    "aec810d5-0e26-4dad-a0a3-4896fb2fa30f": {
-      "type": "rich-text",
-      "blocks": {
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-heading-1",
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-text-1",
-        "template--20256486162751__aec810d5-0e26-4dad-a0a3-4896fb2fa30f-button-1"
-      ],
+    "c403328e-e8e3-4683-a492-6a1b439f143f": {
+      "type": "multirow",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "related-products": {
       "type": "related-products",
+      "blocks": {
+        "ae8e242a-564e-434e-9f0e-859d8c6c130f": {
+          "type": "text",
+          "settings": {
+            "product_button": "Add to Cart"
+          }
+        },
+        "6b48ca9b-786b-4891-a042-4612f509771d": {
+          "type": "text",
+          "settings": {
+            "product_button": "Add to Cart"
+          }
+        },
+        "0180a877-a758-4b28-9be8-687d98a06377": {
+          "type": "text",
+          "settings": {
+            "product_button": "Add to Cart"
+          }
+        }
+      },
+      "block_order": [
+        "ae8e242a-564e-434e-9f0e-859d8c6c130f",
+        "6b48ca9b-786b-4891-a042-4612f509771d",
+        "0180a877-a758-4b28-9be8-687d98a06377"
+      ],
       "settings": {
         "heading": "Related Product",
         "heading_size": "h2",
@@ -119,63 +115,11 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "9f99d804-3539-4f76-984b-3eb40af8e302": {
-      "type": "collapsible-content",
-      "blocks": {
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-1": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Discription",
-            "icon": "none",
-            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
-            "page": ""
-          }
-        },
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-2": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Additional-information",
-            "icon": "none",
-            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
-            "page": ""
-          }
-        },
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Reviews",
-            "icon": "none",
-            "row_content": "<p>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/>We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your <br\/>life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the<br\/> on-going trends and environment of Pakistan<\/p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-1",
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-2",
-        "template--20252445835583__9f99d804-3539-4f76-984b-3eb40af8e302-collapsible_row-3"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
-    "aec810d5-0e26-4dad-a0a3-4896fb2fa30f",
-    "related-products",
-    "9f99d804-3539-4f76-984b-3eb40af8e302"
+    "c403328e-e8e3-4683-a492-6a1b439f143f",
+    "related-products"
   ]
 }

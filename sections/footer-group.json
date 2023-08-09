@@ -23,7 +23,8 @@
           "type": "text",
           "settings": {
             "heading": "<strong>Newsletter<\/strong>",
-            "subtext": "<p>Subcribe to get daily news & more gift<\/p>"
+            "subtext": "<p>Subcribe to get daily news & more gift<\/p>",
+            "customWidth": true
           }
         },
         "fadf9156-0835-46e4-8d58-41d1301fbc7f": {
