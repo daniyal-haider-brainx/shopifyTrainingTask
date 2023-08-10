@@ -64,9 +64,9 @@
             <span>
               <s class="price-item price-item--regular variant-item__old-price">
                 {% if settings.currency_code_enabled %}
-                  {{ compare_at_price | money_with_currency }}
+                  {{ compare_at_price | money_without_currency }}
                 {% else %}
-                  {{ compare_at_price | money }}
+                  {{ compare_at_price | money_without_currency  }}
                 {% endif %}
               </s>
             </span>
@@ -74,7 +74,7 @@
         {%- endif -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item price-item--regular">
-          {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
+          {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max| replace: 'USD', '' }}
         </span>
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
@@ -89,7 +89,7 @@
         <span>
           <s class="price-item price-item--regular">
             {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money_with_currency }}
+              {{ compare_at_price | money_with_currency| replace: 'USD', ''  | remove: '.00'  }}
             {% else %}
               {{ compare_at_price | money }}
             {% endif %}
@@ -98,7 +98,7 @@
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
+        {{ money_price | replace: 'USD', ''  | remove: '.00' }}
       </span>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">

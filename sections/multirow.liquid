@@ -1,19 +1,16 @@
 <script defer>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener('DOMContentLoaded', function () {
     function showTabContent(tabId) {
-      // Hide all tab contents first
       const tabContents = document.querySelectorAll('.tab-content');
       for (const content of tabContents) {
         content.style.display = 'none';
       }
 
-      // Remove active class from all tab links
       const tabLinks = document.querySelectorAll('.tab-link');
       for (const link of tabLinks) {
         link.classList.remove('active');
       }
 
-      // Show the selected tab content
       const selectedTab = document.getElementById(tabId);
       const selectedTabLink = document.querySelector(`[data-tab="${tabId}"]`);
       if (selectedTab && selectedTabLink) {
@@ -22,7 +19,6 @@
       }
     }
 
-    // Attach click event listeners to tab links
     const tabLinks = document.querySelectorAll('.tab-link');
     for (const link of tabLinks) {
       link.addEventListener('click', function () {
@@ -31,76 +27,83 @@
       });
     }
 
-    // Show the initial tab content (you can choose a default tab to show on page load)
     showTabContent('tab1');
   });
 </script>
 
-{%style%}
-.product-form__submit {
-  min-width: calc(17.2rem + var(--buttons-border-width) * 2) !important;
-}
-.tab-content
-{
-  display: flex;
-justify-content: center;
-text-align: center;
-margin-top: 68px;
-}
-.nav-tabs {
-  margin-top: 100px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 105px;
-  list-style: none;
-  list-style-position: outside;
-  font-size: 20px;
-  cursor: pointer;
-  position: relative; /* Ensure relative positioning for pseudo-element */
-}
+{% style %}
+  .product-form__submit {
+    min-width: calc(15.8rem + var(--buttons-border-width) * 2) !important;
+    font-weight:bold;
+  }
+  .tab-content {
+    margin-top: 68px;
+    width: 100%;
+    max-width: 1000px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    color:#b5b5b5;
+    line-height: 1.5;
+  }
+  .nav-tabs {
+    margin-top: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 105px;
+    list-style: none;
+    list-style-position: outside;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+  }
 
-.nav-tabs::after {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%; /* Position the pseudo-element at the center */
-  transform: translateX(-50%); /* Center the pseudo-element */
-  width: 70%; /* Set the width to 70% of the parent container */
-  border-bottom: 1px solid #b5b5b5;
-}
+  .nav-tabs::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-bottom: 1px solid #b5b5b5;
+  }
+  .tab-link {
+    text-align: center;
+    width: 213px;
+  }
+  li.tab-link.active {
+    border-bottom: 1px solid #0aa1bc;
+font-weight:bold;
+    text-align: center;
+  }
 
-/* Optional: Adjust padding or margin to create space for the border */
-.nav-tabs {
-  padding-bottom: 5px; /* Adjust as needed */
-}
+  /* Optional: Adjust padding or margin to create space for the border */
+  .nav-tabs {
+    padding-bottom: 5px; /* Adjust as needed */
+  }
+{% endstyle %}
+{%- if product.description != blank -%}
+  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+    {% assign description_parts = product.description | split: '---' %}
+    {% assign part_size = description_parts.size | divided_by: 3 %}
+    {% assign part1 = description_parts | slice: 0, part_size | join: ' ' %}
+    {% assign part2 = description_parts | slice: part_size, part_size | join: ' ' %}
+    {% assign part3 = description_parts | slice: part_size | join: ' ' %}
+    <script>
+      console.log('hello');
+      console.log('hello');
+    </script>
+    <ul class="nav-tabs">
+      <li class="tab-link active" data-tab="tab1">Discription</li>
+      <li class="tab-link" data-tab="tab2">Additional information</li>
+      <li class="tab-link" data-tab="tab3">Reviews</li>
+    </ul>
 
-li.tab-link.active
-{
-  /* Use a border image instead of a solid color border */
-  border-bottom: 1px solid  blue;
-}
-{%endstyle%}
-  {%- if product.description != blank -%}
-    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-      {% assign description_parts = product.description | split: ' ' %}
-      {% assign part_size = description_parts.size | divided_by: 3 %}
-      {% assign part1 = description_parts | slice: 0, part_size | join: ' ' %}
-      {% assign part2 = description_parts | slice: part_size, part_size | join: ' ' %}
-      {% assign part3 = description_parts | slice: part_size | join: ' ' %}
-
-      <ul class="nav-tabs">
-        <li class="tab-link active" data-tab="tab1">Discription</li>
-        <li class="tab-link" data-tab="tab2">Additional information</li>
-        <li class="tab-link" data-tab="tab3">Reviews</li>
-      </ul>
-
-      <div id="tab1" class="tab-content active">{{ part1 }}</div>
-      <div id="tab2" class="tab-content">{{ part2 }}</div>
-      <div id="tab3" class="tab-content">{{ part3 }}</div>
-    </div>
-  {%- endif -%}
-
-
-
- 
+    <div id="tab1" class="tab-content active">{{ part1 }}</div>
+    <div id="tab2" class="tab-content">{{ part2 }}</div>
+    <div id="tab3" class="tab-content">{{ part3 }}</div>
+  </div>
+{%- endif -%}

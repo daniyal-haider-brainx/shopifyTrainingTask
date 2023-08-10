@@ -7,8 +7,43 @@
 {%- endif -%}
 
 {%- style -%}
+.quick-add__submit {
+    color: white;
+    background-color: #0aa1bc;
+    padding: 2px;
+    text-align: center;
+    width: 188px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: -29px;
+    height: 21px;
+    font-weight: bold;
+}
+.quick-add__submit {
+--color-button-text:none;
+}
+.related-products 
+{
+  margin-bottom: 91px;
+
+}
+.price-item .price-item--regular ,.price-item .price-item--sale .price-item--last   
+{
+  font-size:11px;
+}
 .collectionButtons .productcollection__button:not(:last-child) {
-    margin-right: 315px; /* Adjust this value as needed */
+    margin-right:  315px;
+}
+.productcollection__button
+{
+  color: white;
+background-color: #0aa1bc;
+padding: 2px;
+width: 133px;
+text-align: center;
+height: 35px;
 }
 .collectionButtons
 {
@@ -21,15 +56,7 @@ margin-bottom: 66px;
 {
   border-style:dotted;
 }
-.productcollection__button
-{
-  color: white;
-background-color: #0aa1bc;
-padding: 2px;
-width: 133px;
-text-align: center;
-height: 35px;
-}
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
   }
@@ -41,7 +68,7 @@ height: 35px;
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+<div class="color-{{ section.settings.colorP_scheme }} gradient no-js-hidden">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
@@ -57,12 +84,14 @@ height: 35px;
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
             {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
+              card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            image_shape: section.settings.image_shape,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            show_quick_add: section.settings.enable_quick_add,
+            section_id: section.id
             %}
           </li>
         {% endfor %}
@@ -71,15 +100,7 @@ height: 35px;
     {% endif %}
 
   </product-recommendations>
-  <div class="collectionButtons">
-  {%- for block in section.blocks -%}
-    <div class="productcollection__button">  {{ block.settings.product_button }}</div>
-      {%endfor%}
-  </div>
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
-</div>
+
 
 {% schema %}
 {
@@ -209,6 +230,12 @@ height: 35px;
     },
     {
       "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "Add to cart"
+    },
+    {
+      "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
       "label": "t:sections.related-products.settings.show_secondary_image.label"
@@ -269,19 +296,6 @@ height: 35px;
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "productText",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Product Button",
-          "id": "product_button"
-        }
-      ]
     }
   ],
   "presets": [

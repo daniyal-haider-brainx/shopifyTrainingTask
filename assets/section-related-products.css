@@ -38,11 +38,13 @@
 }
 .related-products__heading
 {
-text-align: center;
-font-weight: bold;
-font-size: 35px;
-margin-bottom: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  margin-bottom: 73px;
+  margin-top: 63px;
 }
+
 .card__badge
 {
   display: none;

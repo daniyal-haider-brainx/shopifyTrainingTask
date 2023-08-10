@@ -1,4 +1,4 @@
-
+ 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
@@ -16,6 +16,15 @@
 {%- endif -%}
 
 {%- style -%}
+.card__heading
+{
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size:24px !important;
+}
+.card__heading:hover{
+    text-decoration: none !important;
+}
 .tab-content
 {
   display: flex;
@@ -34,6 +43,21 @@ list-style: none;
 font-size: 20px;
 cursor:pointer;
 }
+.quick-add__submit {
+    color: white;
+    background-color: #0aa1bc;
+    padding: 2px;
+    text-align: center;
+    width: 188px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: -29px;
+    height: 21px;
+    font-weight: bold;
+}
+
 .tab-link {
   border-radius: 27px;
   border: solid 0.1px #707070;
@@ -44,6 +68,7 @@ cursor:pointer;
   color: #5c5c5c;
   font-weight:bold;
 }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -51,14 +76,19 @@ cursor:pointer;
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+        padding-top: 150px;
+         padding-bottom: 160px;
     }
   }
 {%- endstyle -%}
 
   
 {%style%}
+.price__container {
+  display: flex !important;
+  text-align: center;
+  justify-content: center !important;
+}
 .title
 {
     display: flex;
@@ -73,10 +103,6 @@ cursor:pointer;
 {
   height: 248px;
 width: 255px;
-}
-.tab:active
-{
-    border: solid 3px #0aa1bc;
 }
 .tab {
    padding:7px;
@@ -93,10 +119,9 @@ font-size:13px;
     background-color: #fff;
     width: 132px;
 }
-li.tab-link.active
-{
-  border: solid 0.2px red;
-}
+.tabs li.active {
+        border: 2px solid #0aa1bc; /* You can adjust the color and style as needed */
+    }
 .collection-list-title
 {
   margin:auto;
@@ -132,7 +157,8 @@ cursor:pointer;
 .collectionContent .grid
 {
     display:flex;
-    column-gap:87px !important;
+    column-gap: 8px !important;
+    width:1000px;
 }
 .card__badge
 {
@@ -287,6 +313,9 @@ cursor:pointer;
     
                 tab.classList.add('active');
                 tabContents[index].classList.add('active'); 
+    
+                // Add the blue border class to the active tab
+                tab.classList.add('blue-border');
             });
         });
     
@@ -295,6 +324,7 @@ cursor:pointer;
         const activeTabTarget = document.querySelector(activeTab.getAttribute('data-tab-target'));
         activeTabTarget.classList.add('active');
     });
+    
     
   </script>
 {% schema %}
@@ -574,6 +604,17 @@ cursor:pointer;
   ],
   "blocks":[
     {
+     "type": "text",
+      "name": "collectionText",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Collection Button",
+          "id": "collection_button"
+        }
+      ]
+    },
+    {
     "type":"collection",
     "name":"collection",
     "settings":[
@@ -586,6 +627,7 @@ cursor:pointer;
     }
 
 ],
+
   "presets": [
     {
       "name": "featured-tabs-collection"

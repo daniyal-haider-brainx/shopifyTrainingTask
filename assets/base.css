@@ -562,6 +562,7 @@ hr {
   text-decoration: none;
   color: currentColor;
   display: block;
+  font-size: 26px;
 }
 
 .placeholder {
@@ -906,7 +907,7 @@ summary::-webkit-details-marker {
 }
 
 .grid:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .grid__item {
@@ -1360,11 +1361,9 @@ button.shopify-payment-button__button--unbranded {
 
 .button--full-width {
   display: flex;
-  width: 100%;
 }
 
 .button.loading {
-  color: transparent;
   position: relative;
 }
 
