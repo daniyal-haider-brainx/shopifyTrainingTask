@@ -16,6 +16,16 @@
 
 
   {%- style -%}
+.product__media .media .media--transparent
+
+{
+  margin-top:156px !important;
+}
+/* Target the second slide */
+.product__media-list > li:nth-child(3) {
+    border: 2px dotted #0aa1bc; 
+    padding:15px;
+  }
 .quantity::after
 {
   border: solid 2px #eaeaea;
@@ -36,11 +46,23 @@ background-color: #fff;
 width: 20px;
 height: 20px;
   }
-  .iconImages
-  {
-    display: flex;
-  column-gap: 20px
-  }
+
+  .iconImages {
+  display: flex;
+  column-gap: 20px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.iconImages::after {
+  content: "";
+  position: absolute;
+  bottom: -36px; 
+  left: 0;
+  width: 42%;
+  border-top:solid 0.5px #cecece;
+  margin-bottom:10px;
+}
   .customList p {
   font-size: 13px;
   line-height: 1;
@@ -136,7 +158,7 @@ top: -4px;
         data-url="{{ product.url }}"
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
-        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        {%- assign product_form_id = 'product-form-' | append: product.id -%}
 
         {%- for block in section.blocks -%}
           

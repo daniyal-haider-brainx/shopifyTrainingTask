@@ -7,65 +7,70 @@
 {%- endif -%}
 
 {%- style -%}
-.quick-add__submit {
-    color: white;
-    background-color: #0aa1bc;
-    padding: 2px;
-    text-align: center;
-    width: 188px;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    margin-top: -29px;
-    height: 21px;
-    font-weight: bold;
-}
-.quick-add__submit {
---color-button-text:none;
-}
-.related-products 
-{
-  margin-bottom: 91px;
-
-}
-.price-item .price-item--regular ,.price-item .price-item--sale .price-item--last   
-{
-  font-size:11px;
-}
-.collectionButtons .productcollection__button:not(:last-child) {
-    margin-right:  315px;
-}
-.productcollection__button
-{
-  color: white;
-background-color: #0aa1bc;
-padding: 2px;
-width: 133px;
-text-align: center;
-height: 35px;
-}
-.collectionButtons
-{
-  display: flex;
-justify-content: center;
-
-margin-bottom: 66px;
-}
-.product__media:first-child
-{
-  border-style:dotted;
-}
-
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  .quick-add__submit {
+      color: white;
+      background-color: #0aa1bc;
+      padding: 2px;
+      text-align: center;
+      width: 188px;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      margin-top: -29px;
+      height: 21px;
+      font-weight: bold;
   }
+  .quick-add__submit {
+  --color-button-text:none;
+  }
+  .related-products
+  {
+    margin-bottom: 91px;
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
+  }
+  .price__regular
+    {
+      font-size:12px;
     }
+
+  .price-item .price-item--regular ,.price-item .price-item--sale .price-item--last
+  {
+    font-size:11px;
   }
+  .collectionButtons .productcollection__button:not(:last-child) {re
+      margin-right:  315px;
+  }
+  .productcollection__button
+  {
+    color: white;
+  background-color: #0aa1bc;
+  padding: 2px;
+  width: 133px;
+  text-align: center;
+  height: 35px;
+  }
+  .collectionButtons
+  {
+    display: flex;
+  justify-content: center;
+
+  margin-bottom: 66px;
+  }
+  .product__media:first-child
+  {
+    border-style:dotted;
+  }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+      }
+    }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.colorP_scheme }} gradient no-js-hidden">
@@ -84,23 +89,21 @@ margin-bottom: 66px;
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
             {% render 'card-product',
-              card_product: product,
-            media_aspect_ratio: section.settings.image_ratio,
-            image_shape: section.settings.image_shape,
-            show_secondary_image: section.settings.show_secondary_image,
-            show_vendor: section.settings.show_vendor,
-            show_rating: section.settings.show_rating,
-            show_quick_add: section.settings.enable_quick_add,
-            section_id: section.id
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
             %}
           </li>
         {% endfor %}
-      
       </ul>
     {% endif %}
-
   </product-recommendations>
-
+</div>
 
 {% schema %}
 {

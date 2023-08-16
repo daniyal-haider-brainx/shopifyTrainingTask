@@ -1432,6 +1432,33 @@ font-weight: bold;
 }
 
 @media screen and (max-width: 749px) {
+.iconImages,.price__regular,.price-per-item__container,.product-form__submit
+ {
+  margin-left: 102px;
+ }
+ .price__regular
+ {
+  margin-left: 166px;
+ }
+ .product__title
+ {
+  margin-left: 136px;
+ }
+ .icon-with-text--horizontal .icon-with-text__item {
+  margin-right: 0px !important; 
+}
+.price__sale
+{
+  margin-left: 140px;
+}
+ .iconImages
+ {
+  margin-left: 150px;
+ }
+ .customList
+ {
+  margin-left: 61px;
+ }
   .product-media-container.media-fit-cover {
     display: flex;
     align-self: stretch;

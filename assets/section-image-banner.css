@@ -221,7 +221,31 @@
 .banner--adapt_image.banner--mobile-bottom .banner__media:not(.placeholder) {
   height: auto;
 }
+@media (max-width: 749px) {
+  .banner__heading {
+    font-size: 20px !important;
+  }
 
+  .banner__buttons .button--primary {
+    width: 180px;
+  }
+
+  .banner__buttons .button--secondary {
+    width: 160px;
+    margin-top: 10px;
+  }
+
+  .banner-para {
+    font-size: 18px;
+    margin-bottom: 30px !important;
+    margin-top: 10px !important;
+  }
+
+  .second_banner {
+    font-size: 14px;
+    margin-bottom: 50px !important;
+  }
+}
 @media screen and (max-width: 749px) {
 
   .banner--mobile-bottom .banner__media,
@@ -234,9 +258,12 @@
   }
 
   .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
+    margin-top: 44px;
     background: transparent;
   }
-
+  .banner__buttons .button--primary {
+    width: 179px !important;
+  }
   .banner:not(.banner--mobile-bottom) .banner__box {
     border: none;
     border-radius: 0;
@@ -444,6 +471,27 @@
 }
 
 @media screen and (max-width: 749px) {
+  .product__info-wrapper {
+    padding-left: 5rem !important;
+    padding-right: 3rem !important;
+  }
+  .rich-text__heading {
+    font-size: 19px;
+
+  }
+  .button
+  {
+    min-width: 0!important;
+  }
+  .banner-para
+  {
+    font-size: 12px !important;
+  }
+  .section_end
+  {
+    width:300px;
+    margin:auto;
+  }
   .banner--content-align-mobile-right .banner__buttons--multiple {
     justify-content: flex-end;
   }
@@ -470,7 +518,7 @@
 }
 @media screen and (max-width: 1280px) {
   .banner-para {
-font-size: 18px !important;
+font-size: 18px ;
   }
 
   .button .button--secondary

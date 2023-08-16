@@ -49,3 +49,23 @@
 {
   display: none;
 }
+/* Default styles */
+
+/* Add this media query for screen widths up to 749px */
+@media (max-width: 749px) {
+  .product-grid {
+    flex-wrap: wrap;
+
+}
+.related-products__heading
+{
+  font-size:24px;
+}
+.grid {
+  column-gap: 6px;
+  row-gap: 40px;
+}
+.quick-add__submit {
+  width: 169px !important;
+}
+}
