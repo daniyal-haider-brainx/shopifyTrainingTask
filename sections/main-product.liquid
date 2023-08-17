@@ -23,8 +23,9 @@
 }
 /* Target the second slide */
 .product__media-list > li:nth-child(3) {
-    border: 2px dotted #0aa1bc; 
-    padding:15px;
+    border: 2px dashed #0aa1bc; 
+    padding: 5px 10px; 
+
   }
 .quantity::after
 {
@@ -74,7 +75,8 @@ height: 20px;
 
 .customList p::before {
   content: "•";
-color: #cecece;
+  color: #686868;
+  font-weight:bold;
 position: absolute;
 left: 0;
 font-size: 21px;
@@ -186,6 +188,7 @@ top: -4px;
                     height="{{ block.settings.iconImage1.height}}" 
                     loading="lazy"
                     class="product_icons"
+                    style="filter: brightness(1.3) saturate(1.5) hue-rotate(180deg);"
                   >
                 {% endif %}
                 {%- if block.settings.iconImage2 != blank -%}
@@ -196,6 +199,7 @@ top: -4px;
                     height="{{ block.settings.iconImage2.height}}" 
                     loading="lazy"
                     class="product_icons"
+                    style="filter: brightness(1.3) saturate(1.5) hue-rotate(180deg);"
                   >
                 {% endif %}
               </div>
@@ -204,12 +208,6 @@ top: -4px;
 
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h1">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
-                
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>

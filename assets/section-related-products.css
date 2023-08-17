@@ -59,7 +59,14 @@
 }
 .related-products__heading
 {
+  margin-top: 0px;
   font-size:24px;
+  margin-bottom: 0px;
+}
+.button
+{
+
+  min-height: calc(3.5rem + var(--buttons-border-width) * 2);
 }
 .grid {
   column-gap: 6px;
@@ -67,5 +74,6 @@
 }
 .quick-add__submit {
   width: 169px !important;
+  margin-top: -15px !important;
 }
 }

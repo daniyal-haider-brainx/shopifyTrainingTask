@@ -34,8 +34,8 @@
         "98dc244a-dc8e-4beb-a984-ba4ec5d8f858": {
           "type": "image",
           "settings": {
-            "iconImage1": "shopify:\/\/shop_images\/heart.png",
-            "iconImage2": "shopify:\/\/shop_images\/share.png"
+            "iconImage1": "shopify:\/\/shop_images\/heart.svg",
+            "iconImage2": "shopify:\/\/shop_images\/share-svgrepo-com.svg"
           }
         },
         "description": {

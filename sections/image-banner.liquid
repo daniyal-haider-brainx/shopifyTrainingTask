@@ -30,17 +30,29 @@
     }
   {%- endstyle -%}
 {%- endif -%}
-{%- if section.settings['margin-left'] != blank -%}
+{%- if section.settings.margin-left != blank -%}
   {%- style -%}
         @media screen and (min-width: 750px){
     #Banner-{{ section.id }} .banner__content
-          {margin-left:0;
+          {
+            margin-left:0;
           }
-
         }
+      
   {%- endstyle -%}
 {%- endif -%}
 {%- style -%}
+  @media screen and (max-width: 749px){
+        #Banner-{{ section.id }} .banner__content
+        {
+          {%- if section.settings.secondBanner -%}
+               
+               position:absolute;
+             
+           {%- endif -%}
+        }
+    
+      }
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
@@ -208,7 +220,14 @@
       "id": "margin-left",
       "label": "Remove left margin",
          "default":false
-    },    {
+    },  
+    {
+      "type": "checkbox",
+      "id": "secondBanner",
+      "label": "Add position absolute",
+         "default":false
+    },     
+    {
       "type": "text",
       "id": "text-show",
       "label": "write text",

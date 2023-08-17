@@ -56,6 +56,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/ac.png",
         "margin-left": true,
+        "secondBanner": false,
         "text-show": "We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the on-going trends and environment of Pakistan",
         "image_overlay_opacity": 30,
         "image_height": "large",
@@ -258,6 +259,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/mm.jpg",
         "margin-left": false,
+        "secondBanner": true,
         "text-show": "",
         "image_overlay_opacity": 0,
         "image_height": "large",

@@ -16,7 +16,20 @@
 .rich-text__blocks {
   width: 100%;
 }
+@media screen and (max-width: 749PX) {
+  .rich-text__blocks>*+* {
+    margin-top:0px !important;
+  }
+  .rich-text__blocks
+  {
+    padding-left: 113px!important;
+  }
+  .rich-text__heading
+  {
+    WIDTH: 150PX !important;
+  }
 
+}
 @media screen and (min-width: 750px) {
   .rich-text__wrapper {
     width: 100%;

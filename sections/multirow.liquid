@@ -37,9 +37,11 @@
     font-weight:bold;
   }
   .tab-content {
+    margin-top: 118px !important;
+    font-size: 20px;
     margin-top: 68px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1370px;
     align-content: center;
     display: flex;
     justify-content: center;
@@ -49,7 +51,7 @@
     line-height: 1.5;
   }
   .nav-tabs {
-    margin-top: 100px !important;
+    margin-top: 80px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,8 +75,12 @@
   .tab-link {
     text-align: center;
     width: 213px;
+    color: #7F7F7F !important;
+    font-weight: bold !important;
   }
   li.tab-link.active {
+    font-weight: bold !important;
+    color: #000000 !important;
     border-bottom: 1px solid #0aa1bc;
 font-weight:bold;
     text-align: center;
@@ -85,9 +91,20 @@ font-weight:bold;
     padding-bottom: 5px; /* Adjust as needed */
   }
   @media screen and (max-width: 749px) {
-    .nav-tabs { column-gap:0px !important; 
+    .nav-tabs { 
+      column-gap:0px !important; 
   font-size: 14px;
+  align-items:flex-end;
+  margin-top: 15px !important;
+  
   }
+  .tab-content 
+{
+  font-size:14px;
+  margin-top:20px !important;
+  padding-right: 30px;
+    padding-left: 30px;
+}
 .tab-link
 {
   width:97px !important;
@@ -101,10 +118,6 @@ font-weight:bold;
     {% assign part1 = description_parts | slice: 0, part_size | join: ' ' %}
     {% assign part2 = description_parts | slice: part_size, part_size | join: ' ' %}
     {% assign part3 = description_parts | slice: part_size | join: ' ' %}
-    <script>
-      console.log('hello');
-      console.log('hello');
-    </script>
     <ul class="nav-tabs">
       <li class="tab-link active" data-tab="tab1">Discription</li>
       <li class="tab-link" data-tab="tab2">Additional information</li>

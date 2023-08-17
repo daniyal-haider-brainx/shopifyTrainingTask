@@ -2103,7 +2103,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 .cart-count-bubble {
   position: absolute;
   background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  color:white;
+  background: #0aa1bc;
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
