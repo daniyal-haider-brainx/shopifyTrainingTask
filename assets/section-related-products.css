@@ -34,7 +34,6 @@
 .price-item--sale
 {
   font-size: 9px;
-  font-size:bold;
 }
 .related-products__heading
 {
@@ -74,6 +73,6 @@
 }
 .quick-add__submit {
   width: 169px !important;
-  margin-top: -15px !important;
+
 }
 }

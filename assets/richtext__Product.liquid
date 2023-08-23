@@ -1,65 +1,58 @@
 <script defer>
-    document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener('DOMContentLoaded', function () {
     function showTabContent(tabId) {
-              // Hide all tab contents first
-              const tabContents = document.getElementsByClassName('tab-content');
-              for (const content of tabContents) {
-                  content.style.display = 'none';
-              }
-  
-              // Show the selected tab content
-              const selectedTab = document.getElementById(tabId);
-              if (selectedTab) {
-                  selectedTab.style.display = 'block';
-              }
-          }
-  
-          // Attach click event listeners to tab links
-          const tabLinks = document.getElementsByClassName('tab-link');
-          for (const link of tabLinks) {
-              link.addEventListener('click', function () {
-                  const tabId = this.getAttribute('data-tab');
-                  showTabContent(tabId);
-              });
-          }
-  
-          // Show the initial tab content (you can choose a default tab to show on page load)
-          showTabContent('tab1');
-    });
-  </script>
-  {%style%}
-  .tab-content
-  {
-    display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 68px;
-  color: #b5b5b5;
-  }
-  .nav-tabs
-  {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 105px;
-  list-style: none;
-    list-style-position: outside;
-  font-size: 20px;
-  cursor:pointer;
-  }
-  {%endstyle%}
+      // Hide all tab contents first
+      const tabContents = document.getElementsByClassName('tab-content');
+      for (const content of tabContents) {
+        content.style.display = 'none';
+      }
+
+      // Show the selected tab content
+      const selectedTab = document.getElementById(tabId);
+      if (selectedTab) {
+        selectedTab.style.display = 'block';
+      }
+    }
+    // Attach click event listeners to tab links
+    const tabLinks = document.getElementsByClassName('tab-link');
+    for (const link of tabLinks) {
+      link.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+        showTabContent(tabId);
+      });
+    }
+
+    // Show the initial tab content (you can choose a default tab to show on page load)
+    showTabContent('tab1');
+  });
+</script>
+  {% style %}
+    .tab-content {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 68px;
+      color: #b5b5b5;
+    }
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 105px;
+      list-style: none;
+      list-style-position: outside;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  {% endstyle %}
 {%- if product.description != blank -%}
   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
     {% assign paragraphs = product.description | split: '---' %}
-    
+
     {% for paragraph in paragraphs %}
       {%- assign paragraph_parts = paragraph | split: '---' -%}
-      
+
       {%- assign part_size = paragraph_parts.size | divided_by: 3 -%}
-      <script>
-        console.log('hello');
-console.log(part_size);
-      </script>
       {%- assign part1 = paragraph_parts | slice: 0, part_size | join: ' ' -%}
       {%- assign part2 = paragraph_parts | slice: part_size, part_size | join: ' ' -%}
       {%- assign part3 = paragraph_parts | slice: part_size | join: ' ' -%}
@@ -76,6 +69,3 @@ console.log(part_size);
     {% endfor %}
   </div>
 {%- endif -%}
-
-
-

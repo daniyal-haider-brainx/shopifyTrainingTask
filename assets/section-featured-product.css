@@ -32,43 +32,56 @@
   display: inline-flex;
 }
 
-.share-button + .product__view-details {
+.share-button+.product__view-details {
   display: inline-flex;
   float: right;
   align-items: center;
   min-height: 4.4rem;
 }
 
-.share-button + .product__view-details::after {
+.share-button+.product__view-details::after {
   content: '';
   clear: both;
   display: table;
 }
+
 @media screen and (max-width: 749px) {
 
-  .icon-with-text
-  {
-    margin-left: 93px  ;
+  .icon-with-text {
+    margin-left: 93px;
   }
-  .featured-product.product__title h1
+  .featured-product.price__sale
   {
+    margin-left: 0px !important;
+  }
+  .featured-product .product-form__buttons
+   {
+    margin-left:0px !important
+   } 
+  .featured-product .product__title h1 {
     display: flex;
     justify-content: center;
   }
-   .productForm__Details
+  .featured-product .price-per-item__container 
   {
+    margin-left: 20px;
+  }
+  .productForm__Details {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:310px;
-  } 
-  .button {
-     margin-top: 0px; 
+    width: 310px;
   }
+
+  .button {
+    margin-top: 0px;
+  }
+
   #Slide-template--20256485835071__f1b01762-702f-4b4a-af6e-5f3d27f6c1ac-1 img {
     border: 6px solid #eaeaea !important;
+  }
 }
-}
+
 @media screen and (min-width: 750px) {
   .featured-product .product__media-item {
     padding-bottom: 0;
@@ -80,15 +93,15 @@
 }
 
 @media screen and (min-width: 990px) {
-  .background-secondary .featured-product:not(.product--no-media) > .product__info-wrapper {
+  .background-secondary .featured-product:not(.product--no-media)>.product__info-wrapper {
     padding: 0 0 0 5rem;
   }
 
-  .background-secondary .featured-product:not(.product--no-media).product--right > .product__info-wrapper {
+  .background-secondary .featured-product:not(.product--no-media).product--right>.product__info-wrapper {
     padding: 0 5rem 0 0;
   }
 
-  .featured-product:not(.product--no-media) > .product__info-wrapper {
+  .featured-product:not(.product--no-media)>.product__info-wrapper {
     padding: 0 7rem;
   }
 
@@ -98,89 +111,82 @@
     z-index: 1;
   }
 }
- .plus {
+
+.plus {
   background-color: #0aa1bc !important;
   color: white;
 }
-.minus
-{
-  background-color:#d8d8d8 !important;
-  color:black;
+
+.minus {
+  background-color: #d8d8d8 !important;
+  color: black;
 }
-.product__title
-{
-  color:#0aa1bc;
-  font-weight:bold;
+
+.product__title {
+  color: #0aa1bc;
+  font-weight: bold;
   font-size: 25px;
-  
+
 }
-.productForm__Details
-{
+
+.productForm__Details {
   display: flex;
 
 }
-.product__info-container .product-form
-{
+
+.product__info-container .product-form {
   margin: 0 !important;
 }
-.product-form__submit 
-{
-  border:2px solid !important;
-  box-shadow:none;
-background-color: white;
-border-color: #0aa1bc !important;
-color:#0aa1bc ;
-min-height: calc(3.5rem + var(--buttons-border-width) * 2) !important;
-  --border-opacity:none !important;
+
+.product-form__submit {
+  border: 2px solid !important;
+  box-shadow: none;
+  background-color: white;
+  border-color: #0aa1bc !important;
+  color: #0aa1bc;
+  min-height: calc(3.5rem + var(--buttons-border-width) * 2) !important;
+  --border-opacity: none !important;
   font-size: 11px;
   font-weight: bold;
 }
-/* .button{
-  min-height: calc(3.5rem + var(--buttons-border-width) * 2);
-}
-.button:after
-{
-  border: 2px solid;
-  box-shadow: none;
-  --border-opacity:none !important;
 
-} */
 .product-form__input {
-  flex: 0 0 30%!important;
+  flex: 0 0 30% !important;
 }
-.quantity::after
-{
+
+.quantity::after {
   box-shadow: none;
 }
+
 .quantity__button {
   width: calc(4.5rem / var(--font-body-scale));
   height: 39px;
 }
 
-.itemHeading
-{
-font-size: 12px;
-font-weight: bold;
+.itemHeading {
+  font-size: 12px;
+  font-weight: bold;
 }
-.itemAmount
-{
-font-size: 23px;
-color: #0aa1bc;}
-.product__info-wrapper
-{
+
+.itemAmount {
+  font-size: 23px;
+  color: #0aa1bc;
+}
+
+.product__info-wrapper {
   padding-left: 14rem !important;
-    padding-right: 2rem !important;
-    --color-foreground: none !important;
+  padding-right: 2rem !important;
+  --color-foreground: none !important;
 }
-.product__title
-{
+
+.product__title {
   margin: 0px !important;
 }
-.icon-with-text
-{
-  margin: 0px ;
+
+.icon-with-text {
+  margin: 0px;
 }
-.product-form__buttons
-{
+
+.product-form__buttons {
   padding-left: 25px;
 }

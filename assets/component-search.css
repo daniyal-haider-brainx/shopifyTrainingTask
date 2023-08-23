@@ -68,27 +68,15 @@
 input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-.field__input:focus
-{
-  box-shadow:none !important;
+.field__input:focus,
+.field__input:hover,
+.field__input:active {
+  box-shadow: none !important;
 }
-.field__input:hover
-{
-  box-shadow:none !important;
-}
-.field__input:active
-{
-  box-shadow:none !important;
-}
-.search-container .field:hover
-{
+
+.search-container .field:hover,
+.search__input .field__input-focus-visible,
+.field__input:focus-visible {
   border-color: red;
-}
-.search__input .field__input-focus-visible
-{
-box-shadow: none;
-}
-.field__input:focus-visible
-{
   box-shadow: none !important;
 }

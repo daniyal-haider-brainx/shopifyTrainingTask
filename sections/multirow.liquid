@@ -1,35 +1,4 @@
-<script defer>
-  document.addEventListener('DOMContentLoaded', function () {
-    function showTabContent(tabId) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      for (const content of tabContents) {
-        content.style.display = 'none';
-      }
 
-      const tabLinks = document.querySelectorAll('.tab-link');
-      for (const link of tabLinks) {
-        link.classList.remove('active');
-      }
-
-      const selectedTab = document.getElementById(tabId);
-      const selectedTabLink = document.querySelector(`[data-tab="${tabId}"]`);
-      if (selectedTab && selectedTabLink) {
-        selectedTab.style.display = 'block';
-        selectedTabLink.classList.add('active');
-      }
-    }
-
-    const tabLinks = document.querySelectorAll('.tab-link');
-    for (const link of tabLinks) {
-      link.addEventListener('click', function () {
-        const tabId = this.getAttribute('data-tab');
-        showTabContent(tabId);
-      });
-    }
-
-    showTabContent('tab1');
-  });
-</script>
 
 {% style %}
   .product-form__submit {
@@ -129,3 +98,35 @@ font-weight:bold;
     <div id="tab3" class="tab-content">{{ part3 }}</div>
   </div>
 {%- endif -%}
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    function showTabContent(tabId) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      for (const content of tabContents) {
+        content.style.display = 'none';
+      }
+
+      const tabLinks = document.querySelectorAll('.tab-link');
+      for (const link of tabLinks) {
+        link.classList.remove('active');
+      }
+
+      const selectedTab = document.getElementById(tabId);
+      const selectedTabLink = document.querySelector(`[data-tab="${tabId}"]`);
+      if (selectedTab && selectedTabLink) {
+        selectedTab.style.display = 'block';
+        selectedTabLink.classList.add('active');
+      }
+    }
+
+    const tabLinks = document.querySelectorAll('.tab-link');
+    for (const link of tabLinks) {
+      link.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+        showTabContent(tabId);
+      });
+    }
+
+    showTabContent('tab1');
+  });
+</script>
