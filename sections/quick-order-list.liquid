@@ -1,32 +1,4 @@
-<script defer>
-  document.addEventListener("DOMContentLoaded", function() {
-  function showTabContent(tabId) {
-            // Hide all tab contents first
-            const tabContents = document.getElementsByClassName('tab-content');
-            for (const content of tabContents) {
-                content.style.display = 'none';
-            }
 
-            // Show the selected tab content
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-            }
-        }
-
-        // Attach click event listeners to tab links
-        const tabLinks = document.getElementsByClassName('tab-link');
-        for (const link of tabLinks) {
-            link.addEventListener('click', function () {
-                const tabId = this.getAttribute('data-tab');
-                showTabContent(tabId);
-            });
-        }
-
-        // Show the initial tab content (you can choose a default tab to show on page load)
-        showTabContent('tab1');
-  });
-</script>
 {%style%}
 .navs-separator
 {
@@ -78,3 +50,32 @@ margin-top: 106px !important;
     </div>
   {%- endif -%}
 
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+    function showTabContent(tabId) {
+              // Hide all tab contents first
+              const tabContents = document.getElementsByClassName('tab-content');
+              for (const content of tabContents) {
+                  content.style.display = 'none';
+              }
+  
+              // Show the selected tab content
+              const selectedTab = document.getElementById(tabId);
+              if (selectedTab) {
+                  selectedTab.style.display = 'block';
+              }
+          }
+  
+          // Attach click event listeners to tab links
+          const tabLinks = document.getElementsByClassName('tab-link');
+          for (const link of tabLinks) {
+              link.addEventListener('click', function () {
+                  const tabId = this.getAttribute('data-tab');
+                  showTabContent(tabId);
+              });
+          }
+  
+          // Show the initial tab content (you can choose a default tab to show on page load)
+          showTabContent('tab1');
+    });
+  </script>
