@@ -257,13 +257,16 @@
     <ul class="tabs">
       {%- for block in section.blocks -%}
         <li
-          data-tab-target="{{ block.settings.collectionTabs.title| handleize }} "
-          class="{% if forloop.first %}active{% endif %} tab "
+          data-tab-target="{{ block.settings.collectionTabs.title | handleize }}"
+          data-collection-handle="{{ block.settings.collectionTabs.handle }}"
+          class="{% if forloop.first %}active{% endif %} tab"
         >
           {{ block.settings.collectionTabs.title }}
         </li>
       {%- endfor -%}
     </ul>
+    
+    
     <div class="tab-content">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -349,38 +352,48 @@
       {% render 'mask-arch' %}
     {%- endif -%}
   </div>
+  
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const tabs = document.querySelectorAll('.tabs li');
-    const tabContents = document.querySelectorAll('.collectionContent');
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.getAttribute('data-tab-target'));
-
-        tabContents.forEach((tabContent) => {
-          tabContent.classList.remove('active');
-        });
-
-        tabs.forEach((tab) => {
-          tab.classList.remove('active');
-        });
-
-        tab.classList.add('active');
-        tabContents[index].classList.add('active');
-
-        // Add the blue border class to the active tab
-        tab.classList.add('blue-border');
+  
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', async () => {
+        const collectionHandle = tab.getAttribute('data-collection-handle');
+        console.log('Clicked on collection with handle:', collectionHandle);
+  
+        const tabTarget = tab.getAttribute('data-tab-target');
+        console.log('Tab target:', tabTarget);
+  
+        try {
+          const response = await fetch(`https://daniyal-testing-store.myshopify.com/collections/${collectionHandle}?view=featuredCollection`);
+  
+          console.log('Response status:', response.status);
+  
+          if (!response.ok) {
+            throw new Error(`Failed to fetch collection: ${response.status} ${response.statusText}`);
+          }
+  
+          const responseData = await response.json();
+          console.log('Response data:', responseData);
+  
+          const tabContainer = document.querySelector(tabTarget);
+          tabContainer.innerHTML = responseData;
+  
+          tabs.forEach((otherTab) => {
+            otherTab.classList.remove('active');
+          });
+          tab.classList.add('active');
+        } catch (error) {
+          console.error('Error fetching collection:', error);
+        }
       });
     });
-
-    // Additional code to show initial active tab content
-    const activeTab = document.querySelector('.tabs li.active');
-    const activeTabTarget = document.querySelector(activeTab.getAttribute('data-tab-target'));
-    activeTabTarget.classList.add('active');
   });
+  
 </script>
+
 {% schema %}
 {
   "name": "featured collection",
