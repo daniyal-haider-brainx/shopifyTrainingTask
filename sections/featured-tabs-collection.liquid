@@ -78,6 +78,10 @@
     column-gap: 8px;
     width: 1000px;
   }
+  .tabs-item
+  {
+    margin-right:57px;
+  }
   .card__badge {
     display: none;
   }
@@ -282,7 +286,7 @@
                   {%- for product in block.settings.collectionTabs.products limit: 3 %}
                     <li
                       id="Slide-{{ section.id }}-{{ forloop.index }}"
-                      class=" grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                      class=" grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}  data-collection-handle="{{ block.settings.collectionTabs.handle }}""
                     >
                       {% render 'card-product',
                         card_product: product,
@@ -353,6 +357,29 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var tabs = document.querySelectorAll('.tabs li');
+    var tabsContent = document.querySelector('.tab-content');
+    
+    // Show content of the first tab by default
+    var firstTab = tabs[0];
+    firstTab.classList.add('active');
+    var firstCollectionHandle = firstTab.getAttribute('data-collection-handle');
+    var firstTabId = firstTab.getAttribute('data-tab-target');
+    fetchContent(firstCollectionHandle, firstTabId);
+    
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(tabFeatured) {
+          tabFeatured.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+
+        var collectionHandle = tab.getAttribute('data-collection-handle');
+        var tabId = tab.getAttribute('data-tab-target');
+        
+        fetchContent(collectionHandle, tabId);
+      });
+    });
 
     function fetchContent(collectionHandle, tabId) {
       var link = `https://daniyal-testing-store.myshopify.com/collections/${collectionHandle}?view=featuredCollection`;
@@ -361,10 +388,7 @@
       xhr.onload = function() {
         if (xhr.status === 200) {
           var response = xhr.responseText;
-          var content = document.querySelector(`#${tabId}`);
-          if (content) {
-            content.innerHTML = response;
-          }
+          tabsContent.innerHTML = response;
         } else {
           console.log('Error:', xhr.status);
         }
@@ -374,29 +398,10 @@
       };
       xhr.send();
     }
-
-    tabs.forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        tabs.forEach(function(tabFeatured) {
-          tabFeatured.classList.remove('tab-active');
-        });
-
-        tab.classList.add('tab-active');
-
-        var collectionHandle = tab.getAttribute('data-collection-handle');
-        var tabId = tab.getAttribute('data-tab-target');
-
-        fetchContent(collectionHandle, tabId);
-      });
-    });
-    const activeTab = document.querySelector('.tabs li.active');
-    if (activeTab) {
-      var activeCollectionHandle = activeTab.getAttribute('data-collection-handle');
-      var activeTabId = activeTab.getAttribute('data-tab-target');
-      fetchContent(activeCollectionHandle, activeTabId);
-    }
   });
 </script>
+
+
 
 
 {% schema %}
