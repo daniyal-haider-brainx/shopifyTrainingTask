@@ -1,32 +1,15 @@
 {% layout none %}
-
-{% assign products_to_display = section.settings.collection.all_products_count %}
-{% assign collectionHandle = request.query_params.handle %}
-
-{% if section.settings.collection.all_products_count > section.settings.products_to_show %}
-  {% assign more_in_collection = true %}
-{% endif %}
-<h1>hduiahsdu</h1>
 <ul class="grid product-grid">
-  {%- for product in collections[collectionHandle].products limit:3 %}
-    <li class="grid__item">
-      {% render 'card-product',
-        card_product: product,
-        media_aspect_ratio: section.settings.image_ratio,
-        show_quick_add: section.settings.enable_quick_add,
-        section_id: section.id
-
-      %}
-    </li>
+  {%- for product in collection.products limit :3 %}
+    
+      <li class="tabs-item" "{{ block.settings.collectionTabs.title | handleize }}">
+        {% render 'card-product',
+          card_product: product,
+          media_aspect_ratio: section.settings.image_ratio,
+          show_quick_add: section.settings.enable_quick_add,
+          section_id: section.id
+        %}
+      </li>
   {%- endfor %}
 </ul>
-
-{% if more_in_collection and section.settings.show_view_all %}
-  <div class="center collection__view-all">
-    <a href="{{ section.settings.collection.url }}" class="button">
-      {{ 'sections.featured_collection.view_all' | t }}
-    </a>
-  </div>
-{% endif %}
-
 
