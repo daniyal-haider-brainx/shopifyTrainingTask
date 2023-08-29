@@ -294,6 +294,29 @@
         "mobile_width": "",
         "tablet_width": ""
       }
+    },
+    "16933080806a7c5e9f": {
+      "type": "apps",
+      "blocks": {
+        "7613b9be-10eb-4386-8f96-e8dc2f3db02e": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "c6167935-f1b9-452c-a446-4414da549cf8": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "7613b9be-10eb-4386-8f96-e8dc2f3db02e",
+        "c6167935-f1b9-452c-a446-4414da549cf8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -302,6 +325,7 @@
     "3d921e78-6b42-45b8-831a-8ff4f15e7dc1",
     "f1b01762-702f-4b4a-af6e-5f3d27f6c1ac",
     "3ebae081-edcf-4280-877f-a1dbbb1d8467",
-    "pina-instagram"
+    "pina-instagram",
+    "16933080806a7c5e9f"
   ]
 }

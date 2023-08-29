@@ -31,11 +31,10 @@
             "show_gift_card_recipient": false
           }
         },
-        "98dc244a-dc8e-4beb-a984-ba4ec5d8f858": {
-          "type": "image",
+        "e0ab70ad-21c4-4b1a-8cf7-0485b7e20682": {
+          "type": "share",
           "settings": {
-            "iconImage1": "shopify:\/\/shop_images\/heart.svg",
-            "iconImage2": "shopify:\/\/shop_images\/share-svgrepo-com.svg"
+            "share_label": ""
           }
         },
         "description": {
@@ -69,7 +68,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "98dc244a-dc8e-4beb-a984-ba4ec5d8f858",
+        "e0ab70ad-21c4-4b1a-8cf7-0485b7e20682",
         "description",
         "c62a7d2b-b5ee-4b1a-8ba6-44ebf30fb132",
         "3920f28a-d51d-4165-a9c9-cea24d1002ec"
@@ -112,11 +111,18 @@
         "padding_top": 96,
         "padding_bottom": 28
       }
+    },
+    "169330321194e28f03": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "c403328e-e8e3-4683-a492-6a1b439f143f",
-    "related-products"
+    "related-products",
+    "169330321194e28f03"
   ]
 }
