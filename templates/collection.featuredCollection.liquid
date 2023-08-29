@@ -1,0 +1,16 @@
+{% layout none %}
+<ul class="grid product-grid">
+  {%- for product in collection.products limit:3%}
+    
+      <li class="tabs-item" "{{ block.settings.collectionTabs.title | handleize }} ">
+        {% render 'card-product',
+          card_product: product,
+          media_aspect_ratio: section.settings.image_ratio,
+          show_quick_add: section.settings.enable_quick_add,
+          section_id: section.id
+        %}
+      </li>
+      
+  {%- endfor %}
+</ul>
+

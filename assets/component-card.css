@@ -46,6 +46,7 @@
   box-sizing: border-box;
   border-radius: var(--border-radius);
   border: var(--border-width) solid rgba(var(--color-foreground), var(--border-opacity));
+  --color-background:none;
 }
 
 .card--card:after,
@@ -187,10 +188,10 @@
 }
 
 .card__media .media img {
-  height: 100%;
-  object-fit: cover;
+  height: 100% !important;
+  object-fit: contain;
   object-position: center center;
-  width: 100%;
+  width: 100% !important;
 }
 
 .card__inner:not(.ratio) > .card__content {

@@ -96,7 +96,7 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -119,7 +119,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 750px) {
   .page-width {
-    padding: 0 5rem;
+    padding: 0;
   }
 
   .header.page-width,
@@ -325,6 +325,7 @@ h2,
   h2,
   .h2 {
     font-size: calc(var(--font-heading-scale) * 2.4rem);
+    font-weight: bold;
   }
 }
 
@@ -560,6 +561,7 @@ hr {
   text-decoration: none;
   color: currentColor;
   display: block;
+  font-size: 26px;
 }
 
 .placeholder {
@@ -710,7 +712,6 @@ summary::-webkit-details-marker {
 *:focus-visible {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
@@ -905,7 +906,7 @@ summary::-webkit-details-marker {
 }
 
 .grid:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .grid__item {
@@ -1208,7 +1209,7 @@ button.shopify-payment-button__button--unbranded,
   --shadow-blur-radius: var(--buttons-shadow-blur-radius);
   --shadow-opacity: var(--buttons-shadow-opacity);
   --shadow-visible: var(--buttons-shadow-visible);
-  --border-offset: var(--buttons-border-offset); /* reduce radius edge artifacts */
+  --border-offset: none; /* reduce radius edge artifacts */
   --border-opacity: calc(1 - var(--buttons-border-opacity));
   border-radius: var(--buttons-radius-outset);
   position: relative;
@@ -1218,7 +1219,7 @@ button.shopify-payment-button__button--unbranded,
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded {
-  min-width: calc(12rem + var(--buttons-border-width) * 2);
+  min-width: calc(14rem + var(--buttons-border-width) * 2);
   min-height: calc(4.5rem + var(--buttons-border-width) * 2);
 }
 
@@ -1354,16 +1355,14 @@ button.shopify-payment-button__button--unbranded {
 .customer button.disabled,
 .quantity__button.disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .button--full-width {
   display: flex;
-  width: 100%;
 }
 
 .button.loading {
-  color: transparent;
   position: relative;
 }
 
@@ -2103,7 +2102,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 .cart-count-bubble {
   position: absolute;
   background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  color:white;
+  background: #0aa1bc;
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
@@ -2429,7 +2429,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   .header--top-center {
     grid-template-areas:
       'left-icons heading icons'
-      'navigation navigation navigation';
+      'navigation navigation navigation login';
   }
 
   .header--top-center.drawer-menu {
@@ -2948,7 +2948,6 @@ details-disclosure > details {
 
 .gradient {
   background: rgb(var(--color-background));
-  background: var(--gradient-background);
   background-attachment: fixed;
 }
 
@@ -3510,4 +3509,7 @@ details-disclosure > details {
   .animate--hover-vertical-lift .button:not([disabled]).button--secondary:hover:after {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
+}
+.header__heading-link {
+  display: none;
 }

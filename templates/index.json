@@ -3,18 +3,248 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
+        "92fb803f-e7b0-4418-aae9-0e94a7852687": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "DC INVERTOR",
+            "color_change": false,
             "heading_size": "h0"
+          }
+        },
+        "cc5dbcdb-5c33-412f-bcfa-8fd0bead0197": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Ice Energy<\/strong>",
+            "color_change": true,
+            "heading_size": "h2"
+          }
+        },
+        "85fb2383-3b9e-4b98-b4fd-b70b34f6ff68": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>$500<\/strong>",
+            "color_change": false,
+            "heading_size": "h1"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Add to Cart",
             "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "d0a52345-cf6e-4553-b874-6e33725d4c2a": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "92fb803f-e7b0-4418-aae9-0e94a7852687",
+        "cc5dbcdb-5c33-412f-bcfa-8fd0bead0197",
+        "85fb2383-3b9e-4b98-b4fd-b70b34f6ff68",
+        "button",
+        "d0a52345-cf6e-4553-b874-6e33725d4c2a"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ac.png",
+        "margin-left": true,
+        "secondBanner": false,
+        "text-show": "We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the on-going trends and environment of Pakistan",
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "6609c091-3759-4962-bb29-422a906ac105": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20252445770047__6609c091-3759-4962-bb29-422a906ac105-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Best Sell<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "template--20252445770047__6609c091-3759-4962-bb29-422a906ac105-text-1": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "0cdd7c34-5d24-4ae2-a3e8-9db7bb1f4f9e": {
+          "type": "button",
+          "settings": {
+            "button_label": "Share",
+            "button_link": "",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20252445770047__6609c091-3759-4962-bb29-422a906ac105-heading-1",
+        "template--20252445770047__6609c091-3759-4962-bb29-422a906ac105-text-1",
+        "0cdd7c34-5d24-4ae2-a3e8-9db7bb1f4f9e"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "3d921e78-6b42-45b8-831a-8ff4f15e7dc1": {
+      "type": "featured-product",
+      "blocks": {
+        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-title-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "eb7ae2d3-c8e0-4641-af49-02fdbb2ae089": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "silhouette",
+            "heading_1": "<strong>Ice Energy<\/strong>",
+            "icon_2": "price_tag",
+            "heading_2": "<strong>500 $<\/strong>",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
+        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-quantity_selector-1": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "2980fe29-4d9c-4b0f-b3af-bed11486ae73": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-title-1",
+        "eb7ae2d3-c8e0-4641-af49-02fdbb2ae089",
+        "template--20252445770047__3d921e78-6b42-45b8-831a-8ff4f15e7dc1-quantity_selector-1",
+        "2980fe29-4d9c-4b0f-b3af-bed11486ae73"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "product": "dc-invertor",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "f1b01762-702f-4b4a-af6e-5f3d27f6c1ac": {
+      "type": "featured-tabs-collection",
+      "blocks": {
+        "b335913b-2c06-432c-8561-2743c3b4aa4a": {
+          "type": "collection",
+          "settings": {
+            "collectionTabs": "air-conditioner"
+          }
+        },
+        "3013d821-59e5-420e-a694-8b7006674485": {
+          "type": "collection",
+          "settings": {
+            "collectionTabs": "led"
+          }
+        },
+        "86f884f9-70ba-4927-8cba-31bd22d9bfc5": {
+          "type": "collection",
+          "settings": {
+            "collectionTabs": "oven"
+          }
+        },
+        "0c30ef06-d510-4062-b2f6-2d114e173850": {
+          "type": "collection",
+          "settings": {
+            "collectionTabs": "refrigerator"
+          }
+        }
+      },
+      "block_order": [
+        "b335913b-2c06-432c-8561-2743c3b4aa4a",
+        "3013d821-59e5-420e-a694-8b7006674485",
+        "86f884f9-70ba-4927-8cba-31bd22d9bfc5",
+        "0c30ef06-d510-4062-b2f6-2d114e173850"
+      ],
+      "settings": {
+        "title": "<strong>New Arrivals<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "3ebae081-edcf-4280-877f-a1dbbb1d8467": {
+      "type": "image-banner",
+      "blocks": {
+        "template--20252445770047__3ebae081-edcf-4280-877f-a1dbbb1d8467-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "We welcome you to the world of limitless appliances that are ready to adore your home & workplace with their existence. Orient strives to make your  life simpler & luxurious with their state-of-the-art innovative electronics. Our home appliances are designed and engineered in accordance with the",
+            "text_style": "body"
+          }
+        },
+        "94b507fc-3c89-4984-9f9f-a26c937a8096": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "BLOG",
+            "button_link_1": "shopify:\/\/blogs\/news",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -23,53 +253,55 @@
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "template--20252445770047__3ebae081-edcf-4280-877f-a1dbbb1d8467-text-1",
+        "94b507fc-3c89-4984-9f9f-a26c937a8096"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image": "shopify:\/\/shop_images\/mm.jpg",
+        "margin-left": false,
+        "secondBanner": true,
+        "text-show": "",
+        "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
+        "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "pina-instagram": {
+      "type": "pina-instagram",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "title": "Instagram",
+        "show_profile": false,
+        "timeline": "own",
+        "small": "1",
+        "medium": "3",
+        "large": "4",
+        "gutter": "2",
+        "count": "3",
+        "hashtags": "",
+        "container_class": "page-width",
+        "margin_top": "100px",
+        "margin_left": "",
+        "margin_bottom": "180px",
+        "margin_right": "",
+        "desktop_width": "2300px",
+        "mobile_width": "",
+        "tablet_width": ""
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "6609c091-3759-4962-bb29-422a906ac105",
+    "3d921e78-6b42-45b8-831a-8ff4f15e7dc1",
+    "f1b01762-702f-4b4a-af6e-5f3d27f6c1ac",
+    "3ebae081-edcf-4280-877f-a1dbbb1d8467",
+    "pina-instagram"
   ]
 }
