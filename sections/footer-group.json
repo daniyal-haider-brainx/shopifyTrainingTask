@@ -4,6 +4,50 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "cbab459a-a5d0-4189-bece-fa63cf3bcd6e": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Technology<\/strong>",
+            "menu": "main-menu-1"
+          }
+        },
+        "5b259d21-2d3e-469f-bd40-f58c4ea1edac": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Categories <\/strong>",
+            "menu": "footer"
+          }
+        },
+        "44127f09-ea78-4432-b855-6a4d75c2ee5a": {
+          "type": "text",
+          "settings": {
+            "heading": "<strong>Newsletter<\/strong>",
+            "subtext": "<p>Subcribe to get daily news & more gift<\/p>",
+            "customWidth": true
+          }
+        },
+        "fadf9156-0835-46e4-8d58-41d1301fbc7f": {
+          "type": "button",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_url": ""
+          }
+        },
+        "fb442276-76fb-4485-a62f-f52811c1c219": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "cbab459a-a5d0-4189-bece-fa63cf3bcd6e",
+        "5b259d21-2d3e-469f-bd40-f58c4ea1edac",
+        "44127f09-ea78-4432-b855-6a4d75c2ee5a",
+        "fadf9156-0835-46e4-8d58-41d1301fbc7f",
+        "fb442276-76fb-4485-a62f-f52811c1c219"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "newsletter_enable": true,

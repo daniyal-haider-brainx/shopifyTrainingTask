@@ -28,6 +28,41 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
+  {% comment %}
+  custom css
+  {% endcomment %}
+  .header__heading {
+  display: none;
+}
+.single_button:first-child {
+  border: none;
+  font-weight:lighter;
+  font-size:12px;
+}
+
+.header__menu-item 
+{
+font-size:16px;
+}
+.loginRegister__buttons
+{
+  display: flex;
+  grid-area: icons-start;
+
+}
+.single_button
+{
+  width: 72px;
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #0aa1bc;
+  border: solid 0.5px #0aa1bc;
+  font-size:12px;
+}
+
+  .header__icon
   header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
@@ -60,6 +95,7 @@
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
+    font-weight:bold;
   }
 
   summary.list-menu__item {
@@ -94,9 +130,20 @@
 
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
-    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  @media screen and (max-width: 749px) {
+    .single_button {
+    width: 51px;
+    height:34px;
+    text-align: center;
+    padding: 2.6px;
+    }
+    .loginRegister__buttons
+    {
+    grid-area: inherit;
+    }
+  }
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
@@ -237,6 +284,9 @@
       {%- endif -%}
     {%- endif -%}
 
+
+
+
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -338,6 +388,13 @@
         {%- endif -%}
       </a>
     </div>
+    <div class="loginRegister__buttons">
+      {%- for block in section.blocks -%}
+      <div class="single_button">
+        {{ block.settings.header__buttons }}
+      </div>
+    {%endfor%}
+  </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
@@ -685,7 +742,20 @@
   "blocks": [
     {
       "type": "@app"
-    }
+    },
+    {
+      "type": "text",
+      "name": "Login__Buttons",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Add text",
+          "id": "header__buttons"
+        }
+        
+      ]
+      }
+      
   ]
 }
 {% endschema %}

@@ -5,3 +5,74 @@
 .related-products__heading {
   margin: 0 0 3rem;
 }
+.grid {
+  column-gap: 125px !important;
+}
+.product-grid 
+{
+  display: flex !important;
+  justify-content: space-between !important;
+
+}
+.card__heading{
+  font-size:26PX;
+  font-weight: bold;
+  text-align: center;
+}
+.card__heading:hover{
+  text-decoration: none;
+}
+.card-information
+{
+  text-align: center;
+}
+.price-item--regular
+{
+  font-size: 9px;
+  
+}
+.price-item--sale
+{
+  font-size: 9px;
+}
+.related-products__heading
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  margin-bottom: 73px;
+  margin-top: 63px;
+}
+
+.card__badge
+{
+  display: none;
+}
+/* Default styles */
+
+/* Add this media query for screen widths up to 749px */
+@media (max-width: 749px) {
+  .product-grid {
+    flex-wrap: wrap;
+
+}
+.related-products__heading
+{
+  margin-top: 0px;
+  font-size:24px;
+  margin-bottom: 0px;
+}
+.button
+{
+
+  min-height: calc(3.5rem + var(--buttons-border-width) * 2);
+}
+.grid {
+  column-gap: 6px;
+  row-gap: 40px;
+}
+.quick-add__submit {
+  width: 169px !important;
+
+}
+}

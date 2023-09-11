@@ -7,36 +7,30 @@
   Usage:
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
+{%style%}
 
-<details-modal class="header__search">
-  <details>
-    <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
-      <span>
-        <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false">
-          <use href="#icon-search">
-        </svg>
-        <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false">
-          <use href="#icon-close">
-        </svg>
-      </span>
-    </summary>
-    <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
-      <div class="modal-overlay"></div>
-      <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
-        {%- if settings.predictive_search_enabled -%}
-          <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
-        {%- else -%}
-          <search-form class="search-modal__form">
-        {%- endif -%}
-            <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+.search__button
+{
+  background-color: #0AA1BB !important;
+  width: 81px;
+  font-size: 12px;
+  height: 32px;
+color:white;
+padding-left:10px;
+font-weight:bold;
+  cursor: pointer;
+  border: none;
+}
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+{%endstyle%}
+                
+<div class="search-container">
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search">
               <div class="field">
-                <input class="search__input field__input"
-                  id="{{ input_id }}"
-                  type="search"
-                  name="q"
-                  value="{{ search.terms | escape }}"
-                  placeholder="{{ 'general.search.search' | t }}"
-                  {%- if settings.predictive_search_enabled -%}
+      <input class="search__input field__input" id="{{ input_id }}" type="search" name="q" placeholder="{{ 'general.search.search' | t }}" {%- if settings.predictive_search_enabled -%}
                     role="combobox"
                     aria-expanded="false"
                     aria-owns="predictive-search-results"
@@ -49,18 +43,7 @@
                     spellcheck="false"
                   {%- endif -%}
                 >
-                <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
-                <input type="hidden" name="options[prefix]" value="last">
-                <button type="reset" class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" aria-label="{{ 'general.search.reset' | t }}">
-                  <svg class="icon icon-close" aria-hidden="true" focusable="false">
-                    <use xlink:href="#icon-reset">
-                  </svg>
-                </button>
-                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                  <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                    <use href="#icon-search">
-                  </svg>
-                </button>
+      <label class="field__label visually-hidden" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
               </div>
 
               {%- if settings.predictive_search_enabled -%}
@@ -75,17 +58,9 @@
                 <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
               {%- endif -%}
             </form>
-          {%- if settings.predictive_search_enabled -%}
-            </predictive-search>
-          {%- else -%}
-            </search-form>
-          {%- endif -%}
-        <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-          <svg class="icon icon-close" aria-hidden="true" focusable="false">
-            <use href="#icon-close">
-          </svg>
+
+  <!-- Replace the search icon with a search button -->
+  <button class="search__button" aria-label="{{ 'general.search.search' | t }}" type="submit">
+    Search
         </button>
       </div>
-    </div>
-  </details>
-</details-modal>

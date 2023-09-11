@@ -7,20 +7,76 @@
 {%- endif -%}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+.quick-add__submit {
+    color: white;
+    background-color: #0aa1bc;
+    padding: 2px;
+    text-align: center;
+    width: 164px !important;
+    height: 42px !important;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 21px;
+    font-weight: bold;
+    position: relative;
+    bottom: 41px;
+}
+  .quick-add__submit {
+  --color-button-text:none;
+  }
+  .related-products
+  {
+    margin-bottom: 91px;
+
+  }
+  .price__regular
+    {
+      font-size:12px;
+    }
+
+  .price-item .price-item--regular ,.price-item .price-item--sale .price-item--last
+  {
+    color: #C0C0C0;
+  font-weight: bold;
+    font-size:11px;
+  }
+  .collectionButtons .productcollection__button:not(:last-child) {re
+      margin-right:  315px;
+  }
+  .productcollection__button
+  {
+    color: white;
+  background-color: #0aa1bc;
+  padding: 2px;
+  width: 133px;
+  text-align: center;
+  height: 35px;
+  }
+  .collectionButtons
+  {
+    display: flex;
+  justify-content: center;
+
+  margin-bottom: 66px;
+  }
+  .product__media:first-child
+  {
+    border-style:dotted;
   }
 
-  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     }
-  }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+      }
+    }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+<div class="color-{{ section.settings.colorP_scheme }} gradient no-js-hidden">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
@@ -41,16 +97,15 @@
               image_shape: section.settings.image_shape,
               show_secondary_image: section.settings.show_secondary_image,
               show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
+              show_rating: section.settings.show_rating,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
             %}
           </li>
         {% endfor %}
       </ul>
     {% endif %}
   </product-recommendations>
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
 </div>
 
 {% schema %}
@@ -181,6 +236,12 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "Add to cart"
+    },
+    {
+      "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
       "label": "t:sections.related-products.settings.show_secondary_image.label"
@@ -241,6 +302,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "related-products"
     }
   ]
 }

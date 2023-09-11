@@ -119,6 +119,7 @@
                   </div>
                 </div>
               {%- endif -%}
+
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
                   <h3 class="inline-richtext">{{ block.settings.title }}</h3>
@@ -172,19 +173,19 @@
         </div>
       {%- endif -%}
     </slider-component>
-    <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
-      {%- if section.settings.button_label != blank -%}
-        <a
-          class="button button--primary"
-          {% if section.settings.button_link == blank %}
-            role="link" aria-disabled="true"
-          {% else %}
-            href="{{ section.settings.button_link }}"
-          {% endif %}
-        >
-          {{ section.settings.button_label | escape }}
-        </a>
-      {%- endif -%}
+    <div class="imageSection">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.multicolumnImage != blank -%}
+          <img
+            src="{{ block.settings.multicolumnImage | image_url}}"
+            alt="{{ block.settings.multicolumnImage.alt}}"
+            width="{{ block.settings.multicolumnImage.width}}"
+            height="{{ block.settings.multicolumnImage.height}}"
+            loading="lazy"
+            class="multiColumn__image"
+          >
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -378,6 +379,17 @@
     }
   ],
   "blocks": [
+     {
+      "type":"image",
+      "name":"image_block",
+      "settings":[
+        {
+        "type":"image_picker",
+        "label":"Image",
+      "id": "multicolumnImage"
+        }
+      ]
+    },
     {
       "type": "column",
       "name": "t:sections.multicolumn.blocks.column.name",
@@ -399,6 +411,7 @@
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
         },
+
         {
           "type": "text",
           "id": "link_label",

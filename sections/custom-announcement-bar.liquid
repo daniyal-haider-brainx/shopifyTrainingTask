@@ -1,0 +1,15 @@
+{%- if block.settings.show_search_box %}
+  <div class="announcement-bar__search">
+    <form action="/search" method="get">
+      <input type="text" name="q" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+{% endif -%}
+
+
+{% schema %}
+{
+  "name": "custom announcement"
+}
+{% endschema %}
